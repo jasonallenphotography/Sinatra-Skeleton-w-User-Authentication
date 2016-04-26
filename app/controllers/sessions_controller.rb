@@ -7,16 +7,15 @@ end
 post '/login' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
-    session[:email] = user.email
     session[:id] = user.id
 
-    redirect "/users/#{user.id}"
+    redirect "/users"
   else
     erb :'sessions/login'
   end
 end
 
-delete '/logout' do
+get '/logout' do
   session.clear
   redirect '/'
 end
