@@ -52,7 +52,6 @@ delete '/users/:id' do
   @user = User.find(params[:id])
   redirect_unless_editing_or_deleting_own(@user.id)
 
-
   @user.destroy
   redirect '/users'
 end

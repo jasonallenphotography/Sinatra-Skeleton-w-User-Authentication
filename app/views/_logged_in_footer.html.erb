@@ -8,8 +8,9 @@
       <td><form action='/users/<%= session[:id] %>/edit' method='get'>
             <input type='submit' value='Edit Profile'>
           </form></td>
-      <td><form action='/logout' method='get'>
-            <input type='submit' value='Logout?'>
+      <td><form action='/logout' method='post'>
+          <input type='hidden' name='_method' value='delete'>
+            <input class='logout_button' type='submit' value='Logout?'>
           </form></td>
     </tr>
   </table>
