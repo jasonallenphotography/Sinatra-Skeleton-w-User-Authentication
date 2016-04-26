@@ -1,7 +1,7 @@
 get '/users' do
   redirect_unless_logged_in
 
-  @users = User.all
+  @users = User.all.order(created_at: :asc)
   erb :'users/index'
 end
 

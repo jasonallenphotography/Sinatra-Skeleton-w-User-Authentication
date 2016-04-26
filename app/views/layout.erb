@@ -19,15 +19,16 @@
 
   <title></title>
 </head>
-<body>
-  <%= erb :'/_header.html' %>
+  <body>
+    <%= erb :'/_header.html' %>
 
-<div id="content">
-  <%= yield %>
+    <div id="content">
+      <%= yield %>
+    </div>
 
-</div>
-  <% if current_user %>
-    <%= erb :'/_logged_in_footer.html' %>
-  <% end %>
-</body>
+    <% if current_user %>
+      <%= erb :'/_logged_in_footer.html' %>
+    <% end %>
+
+  </body>
 </html>
