@@ -2,7 +2,7 @@
   <table>
     <tr>
       <td>You are logged in as:</td>
-      <td><%= current_user.email %></td>
+      <td><a href="/users/<%=current_user.id%>"><%= current_user.email %></a></td>
     </tr>
     <tr>
       <td><form action='/users/<%= session[:id] %>/edit' method='get'>

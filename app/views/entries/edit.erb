@@ -1,0 +1,25 @@
+<table>
+  <form action='/entries/<%= @entry.id %>' method='post'>
+  <input type='hidden' name='_method' value='put'/>
+    <tr>
+      <td>Title:</td>
+      <td><input type='text' name='entry[title]' value="<%= @entry.title %>" required></td>
+    </tr>
+    <tr>
+      <td>Body:</td>
+      <td><input type='text' name='entry[body]' value="<%= @entry.body %>" required></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type='submit' value='Update entry'></td>
+    </tr>
+  </form>
+  <form action='/entries/<%=@entry.id%>' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+    <tr>
+      <td><h5>CANNOT BE UNDONE!</h5></td>
+      <td><input type='submit' value='Delete entry?'></td>
+    </tr>
+  </form>
+</table>
+

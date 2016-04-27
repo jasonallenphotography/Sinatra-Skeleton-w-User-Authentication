@@ -11,7 +11,15 @@ end
 
 post '/entries' do
   redirect_unless_logged_in
-  @entry = Entry.new(params[:entry])
+  tags = params[:tag][:tags].split(/\W+/).map do |tag_title|
+    Tag.new(title: tag_title, user_id: current_user.id)
+  end
+
+  @entry = Entry.new(
+    title: params[:entry][:title],
+    body: params[:entry][:body],
+    user_id: current_user.id,
+    tags: tags)
 
   if @entry.save
     redirect '/entries'

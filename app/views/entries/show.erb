@@ -1,0 +1,10 @@
+<div>
+  <h1><%= @entry.title %></h1>
+  <small><p>Author's name: <%= @entry.user.author_name %></p></small>
+  <p><%= @entry.body %></p>
+  <% if @entry.tags %>
+    <% @entry.tags.each do |tag| %>
+      <a href="/tags/<%=tag.id%>"><%= tag.title %></a>
+    <% end %>
+  <% end %>
+</div>

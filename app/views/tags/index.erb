@@ -1,0 +1,13 @@
+<div>
+  <p><a href="/tags/new">Post a new tag</a></p>
+  <hr>
+  <% if @tags.length > 0 %>
+    <ul>
+      <% @tags.each do |entry| %>
+        <li class="list_box"><a href="/tags/<%=entry.id%>"><%= entry.title %></a></li>
+      <% end %>
+    </ul>
+    <% else %>
+     <h4>No Tags to show!</h4>
+    <% end %>
+</div>

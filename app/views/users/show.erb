@@ -10,4 +10,15 @@
     </tr>
   </table>
 
+  <% if @user.entries.length > 0 %>
+    <h3>User's posts:</h3>
+    <ul>
+    <% @user.entries.each do |entry| %>
+      <li class="list_box"><a href="/entries/<%=entry.id%>"><%=entry.title%></a></li>
+    <% end %>
+    </ul>
+    <% else %>
+    <h4>User hasn't posted anything yet!</h4>
+  <% end %>
+
 </div>

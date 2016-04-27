@@ -1,0 +1,13 @@
+<div>
+  <p><a href="/entries/new">Post a new entry</a></p>
+  <hr>
+  <% if @entries.length > 0 %>
+    <ul>
+      <% @entries.each do |entry| %>
+        <li class="list_box"><a href="/entries/<%=entry.id%>"><%= entry.title %></a></li>
+      <% end %>
+    </ul>
+    <% else %>
+     <h4>No Entries to show!</h4>
+    <% end %>
+</div>

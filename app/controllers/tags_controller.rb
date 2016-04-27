@@ -4,11 +4,6 @@ get '/tags' do
   erb :'tags/index'
 end
 
-get '/tags/new' do
-  redirect_unless_logged_in
-  erb :'tags/new'
-end
-
 post '/tags' do
   redirect_unless_logged_in
   @tag = Tag.new(params[:tag])

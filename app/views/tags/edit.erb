@@ -1,0 +1,22 @@
+<table>
+  <form action='/tags/<%= @tag.id %>' method='post'>
+    <input type='hidden' name='_method' value='put'/>
+      <tr>
+        <td>Tag title:</td>
+        <td><input type='text' name='tag[title]' value="<%=@tag.title%>" required></td>
+      </tr>
+      <tr>
+      <tr>
+        <td></td>
+        <td><input type='submit' value='Update tag'></td>
+      </tr>
+    </form>
+    <form action='/tags/<%=@tag.id%>' method='post'>
+    <input type='hidden' name='_method' value='delete'/>
+      <tr>
+        <td><h5>CANNOT BE UNDONE!</h5></td>
+        <td><input type='submit' value='Delete profile?'></td>
+      </tr>
+    </form>
+  </table>
+
